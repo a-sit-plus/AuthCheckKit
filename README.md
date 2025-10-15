@@ -10,7 +10,7 @@
 <img src="https://img.shields.io/badge/license-Apache%20License%202.0-brightgreen.svg?style=flat" alt="GitHub license" />
 <img src="https://img.shields.io/badge/kotlin-multiplatform--mobile-orange.svg?logo=kotlin" alt="Kotlin" />
 <img src="https://img.shields.io/badge/kotlin-2.2.10-blue.svg?logo=kotlin" alt="Kotlin" />
-<img src="https://img.shields.io/maven-central/v/at.asitplus/authcheckkit" alt="Maven" />
+<img src="https://img.shields.io/maven-central/v/at.asitplus.authcheckkit/core" alt="Maven" />
 </div>
 
 AuthCheckKit is a Kotlin Multiplatform library designed to seamlessly assess the authentication capabilities of iOS and Android devices. Whether you're building secure apps or tailoring user experiences based on device-level security, AuthCheckKit provides a unified API to answer critical questions like:
