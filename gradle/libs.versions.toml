@@ -1,23 +1,40 @@
 [versions]
-agp = "8.12.3"
-kotlin = "2.2.20"
+agp = "9.1.1"
+kotlin = "2.4.21"
+compose-multiplatform = "1.10.3"
+compose-material3 = "1.9.0"
+dokka = "2.2.0"
+nexus-publish = "2.0.0"
 android-minSdk = "31"
 android-compileSdk = "36"
-android-biometric = "1.4.0-alpha04"
-napier = "2.7.1"
-composeMultiplatform = "1.9.0"
 android-targetSdk = "36"
-androidx-activity = "1.11.0"
+android-biometric = "1.4.0-alpha05"
+napier = "2.7.1"
+androidx-activity = "1.13.0"
+androidx-compose-ui-test = "1.10.5"
+androidx-test-runner = "1.7.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
-androidx-biometric = { module = "androidx.biometric:biometric", version.ref = "android-biometric"}
-napier = { module = "io.github.aakira:napier", version.ref = "napier"}
+androidx-biometric = { module = "androidx.biometric:biometric", version.ref = "android-biometric" }
+napier = { module = "io.github.aakira:napier", version.ref = "napier" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
+androidx-compose-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "androidx-compose-ui-test" }
+androidx-compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest", version.ref = "androidx-compose-ui-test" }
+androidx-test-runner = { module = "androidx.test:runner", version.ref = "androidx-test-runner" }
+compose-runtime = { module = "org.jetbrains.compose.runtime:runtime", version.ref = "compose-multiplatform" }
+compose-foundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "compose-multiplatform" }
+compose-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "compose-multiplatform" }
+compose-ui-tooling = { module = "org.jetbrains.compose.ui:ui-tooling", version.ref = "compose-multiplatform" }
+compose-ui-tooling-preview = { module = "org.jetbrains.compose.ui:ui-tooling-preview", version.ref = "compose-multiplatform" }
+compose-ui-test = { module = "org.jetbrains.compose.ui:ui-test", version.ref = "compose-multiplatform" }
+compose-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "compose-material3" }
 
 [plugins]
-androidLibrary = { id = "com.android.library", version.ref = "agp" }
+androidKmpLibrary = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
 androidApplication = { id = "com.android.application", version.ref = "agp" }
-composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiplatform" }
+composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
 composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+nexusPublish = { id = "io.github.gradle-nexus.publish-plugin", version.ref = "nexus-publish" }

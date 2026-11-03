@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "AuthCheckKit"
 include(":core")
 include(":testApp")
+include(":testApp:androidApp")

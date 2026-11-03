@@ -1,10 +1,9 @@
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.androidLibrary)
-    id("org.jetbrains.dokka") version "2.0.0"
+    alias(libs.plugins.androidKmpLibrary)
+    alias(libs.plugins.dokka)
     id("signing")
     `maven-publish`
 }
@@ -13,15 +12,11 @@ val artifactVersion: String by extra
 group = "at.asitplus.authcheckkit"
 version = artifactVersion
 
-repositories {
-    google()
-    mavenCentral()
-}
-
 kotlin {
-    androidTarget {
-        publishLibraryVariants("release")
-        @OptIn(ExperimentalKotlinGradlePluginApi::class)
+    android {
+        namespace = "at.asitplus.authcheckkit"
+        compileSdk = libs.versions.android.compileSdk.get().toInt()
+        minSdk = libs.versions.android.minSdk.get().toInt()
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_11)
         }
@@ -47,21 +42,6 @@ kotlin {
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
-
-        iosMain.dependencies {
-        }
-    }
-}
-
-android {
-    namespace = "at.asitplus.authcheckkit"
-    compileSdk = libs.versions.android.compileSdk.get().toInt()
-    defaultConfig {
-        minSdk = libs.versions.android.minSdk.get().toInt()
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
     }
 }
 
@@ -102,13 +82,12 @@ dokka {
     }
 }
 
+val dokkaLogos = listOf("logo-light.png", "logo-dark.png").map { rootProject.rootDir.resolve(it) }
 tasks.named("dokkaGenerate") {
-    doFirst {
-        copy {
-            from(rootProject.rootDir.resolve("logo-light.png"))
-            from(rootProject.rootDir.resolve("logo-dark.png"))
-            into(dokkaOutputDir)
-        }
+    val logos = dokkaLogos
+    val outputDir = dokkaOutputDir
+    doLast {
+        logos.forEach { it.copyTo(outputDir.resolve(it.name), overwrite = true) }
     }
 }
 
