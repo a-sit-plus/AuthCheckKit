@@ -1,11 +1,11 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform) apply false
-    alias(libs.plugins.androidLibrary) apply false
+    alias(libs.plugins.androidKmpLibrary) apply false
     alias(libs.plugins.androidApplication) apply false
     alias(libs.plugins.composeMultiplatform) apply false
     alias(libs.plugins.composeCompiler) apply false
-    id("org.jetbrains.dokka") version "2.0.0"
-    id("io.github.gradle-nexus.publish-plugin") version "2.0.0"
+    alias(libs.plugins.dokka) apply false
+    alias(libs.plugins.nexusPublish)
 }
 
 val artifactVersion: String by extra

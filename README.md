@@ -9,7 +9,7 @@
 <img src="https://raw.githubusercontent.com/a-sit-plus/a-sit-plus.github.io/709e802b3e00cb57916cbb254ca5e1a5756ad2a8/A-SIT%20Plus_%20official_opt.svg" alt="A-SIT Plus Official" />
 <img src="https://img.shields.io/badge/license-Apache%20License%202.0-brightgreen.svg?style=flat" alt="GitHub license" />
 <img src="https://img.shields.io/badge/kotlin-multiplatform--mobile-orange.svg?logo=kotlin" alt="Kotlin" />
-<img src="https://img.shields.io/badge/kotlin-2.2.10-blue.svg?logo=kotlin" alt="Kotlin" />
+<img src="https://img.shields.io/badge/kotlin-2.4.21-blue.svg?logo=kotlin" alt="Kotlin" />
 <img src="https://img.shields.io/maven-central/v/at.asitplus.authcheckkit/core" alt="Maven" />
 </div>
 
